@@ -1,0 +1,118 @@
+
+
+/* Контейнер чатов */
+.chats-container {
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Карточка чата */
+.chat {
+    width: 100%;
+    min-height: 82px;
+    margin-top: 20px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 12px 18px;
+    box-sizing: border-box;
+
+    background: white;
+    border-radius: 18px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+}
+
+/* Hover */
+.chat:hover {
+    transform: translateY(-2px);
+
+    background: #ffffff;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Аватар */
+.chat img {
+    width: 58px;
+    height: 58px;
+
+    flex-shrink: 0;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    margin-right: 16px;
+
+    border: 2px solid #f0f1f5;
+}
+
+/* Информация */
+.chat-info {
+    min-width: 0;
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* Имя пользователя */
+.chat-info h1 {
+    margin: 0;
+
+    font-size: 16px;
+    font-weight: 650;
+
+    color: #17191f;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Последнее сообщение */
+.chat-info h2 {
+    margin: 0;
+
+    font-size: 14px;
+    font-weight: 400;
+
+    color: #7c8290;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+.chat p {
+    margin: 0;
+    margin-left: 12px;
+
+    align-self: flex-start;
+
+    padding-top: 4px;
+
+    font-size: 12px;
+    font-weight: 500;
+
+    color: #9ba1ad;
+
+    white-space: nowrap;
+}

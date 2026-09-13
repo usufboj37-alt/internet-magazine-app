@@ -1,0 +1,166 @@
+.product-page {
+    max-width: 1400px;
+    margin: 40px auto;
+    padding: 0 25px;
+
+    display: grid;
+    grid-template-columns: 520px 1fr 340px;
+    gap: 40px;
+    align-items: start;
+}
+
+
+/* КАРТОЧКА С КАРТИНКОЙ ТОВАРА */
+.product-image-section {
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
+
+    position: relative;
+}
+
+
+/* КАРТИНКА ТОВАРА */
+.product-image {
+    width: 100%;
+    height: 550px;
+    object-fit: contain;
+}
+
+
+/* КРУГЛАЯ КАРТИНКА ПРОДАВЦА */
+#seller {
+    
+
+    width: 100px;
+    height: 100px;
+
+    border-radius: 50%;
+    object-fit: cover;
+
+    /* слева от карточки */
+    left: -130px;
+    top: 0;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, .15);
+}
+
+
+/* DETAILS */
+.product-details {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.product-details h1 {
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.product-category {
+    width: max-content;
+    padding: 8px 18px;
+    border-radius: 30px;
+
+    background: #eef2ff;
+    color: #4f46e5;
+
+    font-weight: 600;
+}
+
+.description {
+    color: #666;
+    line-height: 1.8;
+    font-size: 18px;
+}
+
+
+/* BUY CARD */
+.buy-card {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
+
+    position: sticky;
+    top: 30px;
+}
+
+.buy-card h2 {
+    font-size: 42px;
+    margin-bottom: 30px;
+}
+
+
+/* ADD BUTTON */
+.add-btn {
+    width: 100%;
+    height: 55px;
+
+    border: none;
+    border-radius: 14px;
+
+    background: #444aef;
+    color: white;
+
+    font-size: 18px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: .3s;
+
+    margin-bottom: 30px;
+}
+
+.add-btn:hover {
+    background: hsl(178, 72%, 51%);
+}
+
+
+/* DELETE BUTTON */
+.delete-btn {
+    width: 100%;
+    height: 55px;
+
+    border: none;
+    border-radius: 14px;
+
+    background: #ef4444;
+    color: white;
+
+    font-size: 18px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: .3s;
+}
+
+.delete-btn:hover {
+    background: #dc2626;
+}
+
+
+/* MODAL */
+.my-modal-overlay {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.5);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 9999;
+}
+
+.my-modal {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    min-width: 400px;
+}

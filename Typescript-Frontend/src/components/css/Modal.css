@@ -1,0 +1,222 @@
+
+
+.my-modal-overlay {
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(15, 17, 20, 0.55);
+  backdrop-filter: blur(6px);
+
+  z-index: 1000;
+
+  animation: overlayAppear 0.2s ease;
+}
+
+
+
+.my-modal {
+  width: min(90%, 520px);
+  max-height: 80vh;
+
+  padding: 36px;
+
+  box-sizing: border-box;
+
+  background: #fff;
+  border-radius: 20px;
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.25),
+    0 5px 20px rgba(0, 0, 0, 0.08);
+
+  overflow-y: auto;
+
+  animation: modalAppear 0.2s ease-out;
+}
+
+.tmy-modal {
+  width: min(90%, 1120px);
+  max-height: 80vh;
+
+  padding: 36px;
+
+  box-sizing: border-box;
+
+  background: #fff;
+  border-radius: 20px;
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.25),
+    0 5px 20px rgba(0, 0, 0, 0.08);
+
+  overflow-y: auto;
+
+  animation: modalAppear 0.2s ease-out;
+}
+
+
+
+
+.my-modal-overlay h1,
+.my-modal-overlay h2 {
+  margin: 0 0 28px;
+
+  color: #111318;
+
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: -0.7px;
+
+  text-align: center;
+}
+
+
+
+
+.my-modal-overlay input {
+  width: 100%;
+  height: 48px;
+
+  padding: 0 14px;
+
+  border: 1px solid #d8dbe0;
+  border-radius: 10px;
+
+  outline: none;
+
+  background: #f8f9fa;
+  color: #111318;
+
+  font-size: 16px;
+
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s,
+    background 0.2s;
+}
+
+.my-modal-overlay input::placeholder {
+  color: #9297a0;
+}
+
+.my-modal-overlay input:hover {
+  background: #ffffff;
+}
+
+.my-modal-overlay input:focus {
+  background: #ffffff;
+
+  border-color: #111318;
+
+  box-shadow:
+    0 0 0 3px rgba(17, 19, 24, 0.08);
+}
+
+
+
+
+.my-modal-overlay button {
+  height: 48px;
+
+  padding: 0 22px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #111318;
+  color: white;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s,
+    transform 0.15s,
+    box-shadow 0.2s;
+}
+
+.my-modal-overlay button:hover {
+  background: #292c32;
+
+  box-shadow:
+    0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.my-modal-overlay button:active {
+  transform: scale(0.97);
+}
+
+
+
+
+.my-modal-overlay input + button {
+  margin-left: 8px;
+}
+
+
+
+
+@keyframes overlayAppear {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalAppear {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+
+@media (max-width: 600px) {
+
+  .my-modal-overlay > div {
+    width: calc(100% - 30px);
+
+    padding: 28px 22px;
+
+    border-radius: 16px;
+  }
+
+  .my-modal-overlay h1,
+  .my-modal-overlay h2 {
+    font-size: 24px;
+  }
+
+}
+.modal-content {
+  width: 100%;
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.modal-form input {
+  width: 100%;
+}
+
+.modal-form button {
+  width: 100%;
+  margin: 0;
+}
