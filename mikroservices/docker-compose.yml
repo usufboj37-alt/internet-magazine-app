@@ -1,0 +1,379 @@
+services:
+  create-product-service:
+    build:
+      context: ../create-product
+    container_name: create-product-service
+    ports:
+      - "8001:8000"
+    networks:
+      - backend
+
+  delete-product-service:
+    build:
+      context: ../delete-product
+    container_name: delete-product-service
+    ports:
+      - "8002:8000"
+    networks:
+      - backend
+
+  create-user-service:
+    build:
+      context: ../create-user
+    container_name: create-user-service-
+    ports:
+      - "8003:8000"
+    networks:
+      - backend
+
+  login-service:
+    build:
+      context: ../login
+    container_name: login-service-
+    ports:
+      - "8004:8000"
+    networks:
+      - backend
+
+  get-user-service:
+    build:
+      context: ../get-user
+    container_name: get-user-service
+    ports:
+      - "8005:8000"
+    networks:
+      - backend
+
+  logout-service:
+    build:
+      context: ../logout
+    container_name: logout-service-
+    ports:
+      - "8006:8000"
+    networks:
+      - backend
+
+  products-service:
+    build:
+      context: ../get-all-products
+    container_name: products-service
+    ports:
+      - "8007:8000"
+    networks:
+      - backend
+  add-cart-service:
+    build:
+      context: ../add-to-cart
+    container_name: add-cart-service
+    ports:
+      - "8008:8000"
+    networks:
+      - backend
+  cart-service:
+    build:
+      context: ../get-cart-items
+    container_name: cart-service
+    ports:
+      - "8009:8000"
+    networks:
+      - backend
+  get-rating-service:
+    build:
+      context: ../get-rating
+    container_name: get-rating-service
+    ports:
+      - "8010:8000"
+    networks:
+      - backend
+
+  add-rating-service:
+    build:
+      context: ../create-rating
+    container_name: add-rating-service
+    ports:
+      - "8011:8000"
+    networks:
+      - backend
+
+  like-service:
+    build:
+      context: ../add-like
+    container_name: like-service
+    ports:
+      - "8012:8000"
+    networks:
+      - backend
+
+  add-comment-service:
+    build:
+      context: ../add-comment
+    container_name: add-comment-service
+    ports:
+      - "8013:8000"
+    networks:
+      - backend
+  get-comment-service:
+    build:
+      context: ../get-comments
+    container_name: get-comment-service
+    ports:
+      - "8014:8000"
+    networks:
+      - backend
+
+  refresh-service:
+    build:
+      context: ../refresh
+    container_name: refresh-service
+    ports:
+      - "8015:8000"
+    networks:
+      - backend
+  get-product-service:
+    build:
+      context: ../get-product
+    container_name: get-product-service
+    ports:
+      - "8016:8000"
+    networks:
+      - backend
+
+  update-service:
+    build:
+      context: ../update-user
+    container_name: update-service
+    ports:
+      - "8017:8000"
+    networks:
+      - backend
+
+  ncreate-wallet-service:
+    build:
+      context: ../create-wallet
+    container_name: ncreate-wallet-service
+    ports:
+      - "8018:8000"
+    networks:
+      - backend
+
+  get-wallets-service:
+    build:
+      context: ../get-wallets
+    container_name: get-wallets-service
+    ports:
+      - "8019:8000"
+    networks:
+      - backend
+  buy-service:
+    build:
+      context: ../buy-item
+    container_name: buy-service
+    ports:
+      - "8020:8000"
+    networks:
+      - backend
+
+  tget-wallet-service:
+    build:
+      context: ../get-wallet
+    container_name: tget-wallet-service
+    ports:
+      - "8021:8000"
+    networks:
+      - backend
+
+  ttransfer-service:
+    build:
+      context: ../transfer
+    container_name: ttransfer-service
+    ports:
+      - "8022:8000"
+    networks:
+      - backend
+  
+  toperations-service:
+    build:
+      context: ../get-operations
+    container_name: toperations-service
+    ports:
+      - "8023:8000"
+    networks:
+      - backend
+  
+  get-u-operations-service:
+    build:
+      context: ../get-user-operations
+    container_name: get-u-operations-service
+    ports:
+      - "8024:8000"
+    networks:
+      - backend
+  
+  top-up-service:
+    build:
+      context: ../top-up
+    container_name: top-up-service
+    ports:
+      - "8025:8000"
+    networks:
+      - backend
+
+  websocket-service:
+    build:
+      context: ../websocket
+    container_name: websocket-service
+    ports:
+      - "8026:8000"
+    networks:
+      - backend
+  
+  get-messages-service:
+    build:
+      context: ../get_messages
+    container_name: get-messages-service
+    ports:
+      - "8027:8000"
+    networks:
+      - backend
+
+  get-chat-service:
+    build:
+      context: ../get-chat
+    container_name: get-chat-service
+    ports:
+      - "8028:8000"
+    networks:
+      - backend
+  
+  get-chats-service:
+    build:
+      context: ../get-chats
+    container_name: get-chats-service
+    ports:
+      - "8029:8000"
+    networks:
+      - backend
+
+  promocode-service:
+    build:
+      context: ../promocode
+    container_name: promocode-service
+    ports:
+      - "8030:8000"
+    networks:
+      - backend
+
+  create-promocode-service:
+    build:
+      context: ../create-promocode
+    container_name: create-promocode-service
+    ports:
+      - "8031:8000"
+    networks:
+      - backend
+
+
+
+  # nginx:
+  #   build:
+  #     context: ../my_nginx
+  #   container_name: nginx-gateway
+  #   ports:
+  #     - "80:80"
+  #   depends_on:
+  #     - get-wallet-service
+  #     - create-wallet-service
+  #     - add-income-service
+  #     - add-expense-service
+  #     - delete-wallet-service
+  #     - update-wallet-service
+  #     - create-user-service
+  #     - login-service
+  #     - get-current-user-service
+  #     - ttransfer-service
+  #     - logout-service
+  #     - wallets-service
+  #     - refresh-service
+  #     - operations-service
+  #   networks:
+  #     - backend
+
+  my-postgresql:
+    image: postgres:16
+    container_name: my-postgresql
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: yusufboy2012
+      POSTGRES_DB: my-db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - backend
+
+  # my-redis:
+  #   image: redis:latest
+  #   container_name: my-redis
+  #   ports:
+  #     - "6379:6379"
+  #   networks:
+  #   - backend
+
+  #promtail:
+  #image: grafana/promtail:latest
+  #container_name: promtail
+  #ports:
+  #- "9080:9080"
+  #volumes:
+  #- /var/lib/docker/containers:/var/lib/docker/containers:ro
+  #- /var/run/docker.sock:/var/run/docker.sock
+  #- ./promtail-config.yaml:/etc/promtail/config.yml
+  #command: -config.file=/etc/promtail/config.yml
+  #privileged: true
+  #networks:
+  #- backend
+#
+#
+#loki:
+#image: grafana/loki:latest
+#container_name: loki
+#ports:
+#- "3100:3100"
+#volumes:
+#- ./loki-config.yaml:/etc/loki/local-config.yaml
+#networks:
+#- backend
+#
+#prometheus:
+#image: prom/prometheus:latest
+#container_name: prometheus
+#ports:
+#- "9090:9090"
+#volumes:
+#- ./prometheus.yml:/etc/prometheus/prometheus.yml
+#- prometheusdata:/prometheus
+#networks:
+#- backend
+#
+#grafana:
+#image: grafana/grafana:latest
+#container_name: grafana
+#ports:
+#- "3000:3000"
+#environment:
+#- GF-SECURITY-ADMIN-USER=admin
+#- GF-SECURITY-ADMIN-PASSWORD=admin
+#volumes:
+#- ./grafana/datasources.yaml:/etc/grafana/provisioning/datasources/datasources.yaml
+#- grafanadata:/var/lib/grafana
+#networks:
+#- backend
+
+networks:
+  backend:
+
+volumes:
+  #grafanadata:
+  #prometheusdata:
+  postgres-data:

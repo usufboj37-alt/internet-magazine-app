@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-postgresql
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: my-postgresql
+
+  template:
+    metadata:
+      labels:
+        app: my-postgresql
+
+    spec:
+      containers:
+        - name: my-postgresql
+          image: postgres:17
+
+          env:
+            - name: POSTGRES_USER
+              value: postgres
+
+            - name: POSTGRES_PASSWORD
+              value: yusufboy2012
+
+            - name: POSTGRES_DB
+              value: my-db
+
+          ports:
+            - containerPort: 5432
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-postgresql
+
+spec:
+  selector:
+    app: my-postgresql
+
+  ports:
+    - port: 5432
+      targetPort: 5432
+
+  type: ClusterIP

@@ -1,0 +1,11 @@
+from authx import AuthX,AuthXConfig
+
+config=AuthXConfig(
+    JWT_SECRET_KEY="YSF_SUPER_MEGA_ULTRA_GIGA_SECRET_ACCESS_TOKEN_SECRET_KEY",
+    JWT_ACCESS_COOKIE_NAME="YSF_JWT_TOKEN_COOKIE",
+    JWT_COOKIE_CSRF_PROTECT=False,JWT_COOKIE_SECURE=False,
+    JWT_COOKIE_SAMESITE="lax",
+    
+)
+config.JWT_TOKEN_LOCATION = ["cookies"]
+security=AuthX(config=config)

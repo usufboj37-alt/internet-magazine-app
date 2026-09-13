@@ -1,0 +1,271 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: microservice-ingress
+
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: app.local
+      http:
+        paths:
+          - path: /create-product
+            pathType: Prefix
+            backend:
+              service:
+                name: create-product-service
+                port:
+                  number: 8000
+          - path: /uploads
+            pathType: Prefix
+            backend:
+              service:
+                name: create-product-service
+                port:
+                  number: 8000
+
+          - path: /login
+            pathType: Prefix
+            backend:
+              service:
+                name: login-service
+                port:
+                  number: 8000
+
+          - path: /logout
+            pathType: Prefix
+            backend:
+              service:
+                name: logout-service
+                port:
+                  number: 8000
+
+          - path: /delete
+            pathType: Prefix
+            backend:
+              service:
+                name: delete-product-service
+                port:
+                  number: 8000
+
+          - path: /create-user
+            pathType: Prefix
+            backend:
+              service:
+                name: create-user-service
+                port:
+                  number: 8000
+
+          - path: /get_user
+            pathType: Prefix
+            backend:
+              service:
+                name: get-current-user-service
+                port:
+                  number: 8000
+
+          - path: /get-user
+            pathType: Prefix
+            backend:
+              service:
+                name: get-current-user-service
+                port:
+                  number: 8000
+
+          - path: /products
+            pathType: Prefix
+            backend:
+              service:
+                name: products-service
+                port:
+                  number: 8000
+
+          - path: /cart
+            pathType: Prefix
+            backend:
+              service:
+                name: cart-service
+                port:
+                  number: 8000
+
+          - path: /add-cart
+            pathType: Prefix
+            backend:
+              service:
+                name: add-cart-service
+                port:
+                  number: 8000
+          - path: /add-rating
+            pathType: Prefix
+            backend:
+              service:
+                name: add-rating-service
+                port:
+                  number: 8000
+
+          - path: /rating
+            pathType: Prefix
+            backend:
+              service:
+                name: get-rating-service
+                port:
+                  number: 8000
+          - path: /like
+            pathType: Prefix
+            backend:
+              service:
+                name: like-service
+                port:
+                  number: 8000
+          - path: /comment
+            pathType: Prefix
+            backend:
+              service:
+                name: add-comment-service
+                port:
+                  number: 8000
+          - path: /comments
+            pathType: Prefix
+            backend:
+              service:
+                name: get-comment-service
+                port:
+                  number: 8000
+          - path: /acc-uploads
+            pathType: Prefix
+            backend:
+              service:
+                name: create-user-service
+                port:
+                  number: 8000
+          - path: /refresh
+            pathType: Prefix
+            backend:
+              service:
+                name: refresh-service
+                port:
+                  number: 8000
+          - path: /get-product
+            pathType: Prefix
+            backend:
+              service:
+                name: get-product-service
+                port:
+                  number: 8000
+          - path: /update
+            pathType: Prefix
+            backend:
+              service:
+                name: update-service
+                port:
+                  number: 8000
+          - path: /create-wallet
+            pathType: Prefix
+            backend:
+              service:
+                name: ncreate-wallet-service
+                port:
+                  number: 8000
+          - path: /wallets
+            pathType: Prefix
+            backend:
+              service:
+                name: get-wallets-service
+                port:
+                  number: 8000
+          - path: /buy
+            pathType: Prefix
+            backend:
+              service:
+                name: buy-service
+                port:
+                  number: 8000
+
+          - path: /transfer
+            pathType: Prefix
+            backend:
+              service:
+                name: ttransfer-service
+                port:
+                  number: 8000
+
+          - path: /wallet
+            pathType: Prefix
+            backend:
+              service:
+                name: tget-wallet-service
+                port:
+                  number: 8000
+          
+          - path: /operations
+            pathType: Prefix
+            backend:
+              service:
+                name: toperations-service
+                port:
+                  number: 8000
+                  
+          - path: /user-operations
+            pathType: Prefix
+            backend:
+              service:
+                name: get-u-operations-service
+                port:
+                  number: 8000
+          
+          - path: /top-up
+            pathType: Prefix
+            backend:
+              service:
+                name: top-up-service
+                port:
+                  number: 8000
+          
+          - path: /ws
+            pathType: Prefix
+            backend:
+              service:
+                name: websocket-service
+                port:
+                  number: 8000
+          
+          - path: /messages
+            pathType: Prefix
+            backend:
+              service:
+                name: get-messages-service
+                port:
+                  number: 8000
+
+          - path: /get-chat
+            pathType: Prefix
+            backend:
+              service:
+                name: get-chat-service
+                port:
+                  number: 8000
+
+          - path: /chats
+            pathType: Prefix
+            backend:
+              service:
+                name: get-chats-service
+                port:
+                  number: 8000
+
+          - path: /promocode
+            pathType: Prefix
+            backend:
+              service:
+                name: promocode-service
+                port:
+                  number: 8000
+
+          - path: /create-promocode
+            pathType: Prefix
+            backend:
+              service:
+                name: create-promocode-service
+                port:
+                  number: 8000
+

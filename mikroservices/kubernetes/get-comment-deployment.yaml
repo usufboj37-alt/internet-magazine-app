@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: get-comment-service
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: get-comment-service
+
+  template:
+    metadata:
+      labels:
+        app: get-comment-service
+
+    spec:
+      containers:
+        - name: get-comment-service
+          image: mikroservices-get-comment-service
+          imagePullPolicy: IfNotPresent
+
+          ports:
+            - containerPort: 8000
+
+          env:
+            - name: DATABASE_URL
+              value: postgresql+psycopg2://postgres:yusufboy2012@my-postgres:5432/mydb
+
+            - name: REDIS_URL
+              value: redis://redis:6379
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: get-comment-service
+
+spec:
+  selector:
+    app: get-comment-service
+
+  ports:
+    - port: 8000
+      targetPort: 8000
+
+  type: ClusterIP
